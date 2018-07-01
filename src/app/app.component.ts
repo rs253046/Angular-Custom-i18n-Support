@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { I18nService } from "./services/i18n/i18n.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private i18n: I18nService) {
+  }
+
+  toggleLocale(lang) {
+    this.i18n.use(lang);
+  }
 }
