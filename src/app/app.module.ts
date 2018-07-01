@@ -5,11 +5,14 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { I18nDirective } from './directives/i18n.directive';
 import { I18nService } from "./services/i18n/i18n.service";
+import { OfflineManagerService } from "./services/offline-manager/offline-manager.service";
+import { AutosaveDirective } from './directives/autosave/autosave.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    I18nDirective
+    I18nDirective,
+    AutosaveDirective
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,10 @@ import { I18nService } from "./services/i18n/i18n.service";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [I18nService],
+  providers: [
+    I18nService,
+    OfflineManagerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
